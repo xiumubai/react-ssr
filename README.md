@@ -8,3 +8,11 @@ $ npm install webpack webpack-cli webpack-node-externals @bable/preset-env @babe
 ```
 $ npm install react react-dom react-dom-server express babel-loader
 ```
+
+### 运行服务端
+
+`$ npm run dev:server $ npm run dev:start`
+
+### 运行客户端
+
+`$ npm run dev:client`

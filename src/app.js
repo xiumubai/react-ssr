@@ -11,4 +11,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default <App title='react-ssr'></App>;
