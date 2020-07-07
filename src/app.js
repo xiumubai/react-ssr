@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
+import Index from './container/Index';
+import About from './container/About';
 
-function App(props) {
-  const [count, setCount] = useState(1);
+function App() {
   return (
     <div>
-      <h1>hello {props.title}!</h1>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>累加</button>
+      <Route path='/' exact component={Index}></Route>
+      <Route path='/about' exact component={About}></Route>
     </div>
   );
 }

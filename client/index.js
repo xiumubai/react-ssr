@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from '../src/app';
 
-import React, { useState } from 'react';
-
+const Page = <BrowserRouter>{App}</BrowserRouter>;
 // 注水
-React.hydrate(App, document.getElementById('root'));
+React.hydrate(Page, document.getElementById('root'));

@@ -3,12 +3,15 @@ import { renderToString } from 'react-dom/server';
 
 import express from 'express';
 import App from '../src/app';
+import { StaticRouter } from 'react-router-dom';
 
 const app = express();
 app.use(express.static('public'));
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   // const Page = <APP title='react-ssr'></APP>;
-  const content = renderToString(App);
+  const content = renderToString(
+    <StaticRouter location={req.url}>{App}</StaticRouter>
+  );
   res.send(`
     <!DOCTYPE html>
     <html lang="en">
