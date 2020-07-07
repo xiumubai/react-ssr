@@ -41,3 +41,9 @@
 ### 服务端路由
 
 - StaticRouter
+
+## store
+
+### 安装
+
+`npm install redux react-redux redux-thunk axios --save`

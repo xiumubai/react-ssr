@@ -1,6 +1,7 @@
 import React from 'react';
-import { renderToString } from 'react-dom/server';
-
+import { renderToString } from 'react-dom-server';
+import { Provider } from 'react-redux';
+import store from '../src/store/store';
 import express from 'express';
 import App from '../src/app';
 import { StaticRouter } from 'react-router-dom';
@@ -10,7 +11,9 @@ app.use(express.static('public'));
 app.get('*', (req, res) => {
   // const Page = <APP title='react-ssr'></APP>;
   const content = renderToString(
-    <StaticRouter location={req.url}>{App}</StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={req.url}>{App}</StaticRouter>
+    </Provider>
   );
   res.send(`
     <!DOCTYPE html>
@@ -29,5 +32,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(9093, () => {
-  console.log('app server listen 9093!');
+  console.log('app server listen https://localhost:9093!');
 });
