@@ -16,3 +16,7 @@ $ npm install react react-dom react-dom-server express babel-loader
 ### 运行客户端
 
 `$ npm run dev:client`
+
+### concurrently 同时运行多个命令
+
+`npm install concurrently --save`
