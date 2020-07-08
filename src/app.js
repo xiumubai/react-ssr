@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default <App title='react-ssr'></App>;
+export default App;

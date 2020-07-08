@@ -9,7 +9,6 @@ import { StaticRouter } from 'react-router-dom';
 const app = express();
 app.use(express.static('public'));
 app.get('*', (req, res) => {
-  // const Page = <APP title='react-ssr'></APP>;
   const content = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url}>{App}</StaticRouter>

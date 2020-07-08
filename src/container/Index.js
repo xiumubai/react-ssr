@@ -16,7 +16,7 @@ function Index(props) {
       <hr />
       <ul>
         {props.list.map((item) => {
-          <li key={item.id}>{item.name}</li>;
+          return <li key={item.id}>{item.name}</li>;
         })}
       </ul>
     </div>
@@ -24,10 +24,8 @@ function Index(props) {
 }
 
 export default connect(
-  (state) => (
-    {
-      list: state.index.list,
-    },
-    { getIndexList }
-  )
+  (state) => ({
+    list: state.index.list,
+  }),
+  { getIndexList }
 )(Index);
